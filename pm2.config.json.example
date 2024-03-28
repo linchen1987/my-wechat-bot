@@ -1,0 +1,23 @@
+{
+  "apps": [
+    {
+      "name": "wechat-robot",
+      "script": "node index.js",
+      "instances": 1,
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      },
+      "autorestart": true,
+      "watch": false,
+      "max_memory_restart": "1G",
+      "cwd": ".",
+      "error_file": "./logs/error.log",
+      "out_file": "./logs/outout.log",
+      "merge_logs": true,
+      "time": true
+    }
+  ]
+}

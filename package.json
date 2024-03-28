@@ -1,0 +1,38 @@
+{
+  "name": "wechat-robot",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js --watch src index.js",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && mkdir dist &&  cp -r .env.example  pm2.config.json.example package.json src index.js dist",
+    "db": "drizzle-kit push:pg"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv-flow": "^4.1.0",
+    "drizzle-orm": "^0.30.5",
+    "express": "^4.19.2",
+    "https-proxy-agent": "^7.0.4",
+    "openai": "^4.29.0",
+    "postgres": "^3.4.4",
+    "qrcode-terminal": "^0.12.0",
+    "redis": "^4.6.13",
+    "wechaty": "^1.20.2",
+    "wechaty-puppet-padlocal": "^1.20.1",
+    "wechaty-puppet-wechat": "^1.18.4",
+    "wechaty-puppet-wechat4u": "^1.14.14"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.20.14",
+    "ncc": "^0.3.6"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
