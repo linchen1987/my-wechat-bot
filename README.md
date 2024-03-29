@@ -3,6 +3,12 @@
 ## Become friends with my digital identity
 ![](./assets/bot.png)
 
+## Feature
+- Text chat with ChatGPT in WeChat
+- Support 1v1 chat or mention(@) in group
+- Daily token statistics and limits
+- Monitoring (to prevent accounts from going offline sometimes)
+
 ## Development
 > Notice: the following tool should available in your computer
 >   Redis
@@ -32,6 +38,10 @@
         - SRC: your `dist` folder path in your local computer
         - DIST: the dest endpoint:folder in your server. e.g. `username@xxx.xxx.xxx.xxx:/home/user/wechat-bot`
 3. ssh to your server and run `pnpm install --production`
-4. create `.env` from `.env.example`, config `OPENAI_API_KEY`, `POSTGRES_URL` in `.env`
+4. create `.env` from `.env.example`, config `OPENAI_API_KEY`, `POSTGRES_URL`, `MAX_TOKEN_COUNT_PER_DAY` in `.env`
 5. create `pm2.config.json` from `pm2.config.json.example` 
 6. `pm2 start pm2.config.json`
+
+## Monitor
+1. Bind a domain for this service
+2. use a monitor service like https://uptime.betterstack.com/ or https://uptimerobot.com/
