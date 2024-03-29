@@ -98,6 +98,12 @@ wechaty
         return;
       }
 
+      const talkerId = message.talker().id;
+      const talkerName = message.talker().name();
+      if ((talkerName || "").includes === "微信") {
+        return;
+      }
+
       if (messageType !== wechaty.Message.Type.Text) {
         await sender.say("我暂时只能处理文字消息");
         return;
@@ -110,8 +116,6 @@ wechaty
         return;
       }
 
-      const talkerId = message.talker().id;
-      const talkerName = message.talker().name();
       console.log("begin replying to", talkerName, talkerId, message.id);
       const id = `linkBot:messages:${sender.id}-${talkerId}`;
       const messages = await cache.getLastTenItems(id);
