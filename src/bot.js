@@ -98,9 +98,15 @@ wechaty
         return;
       }
 
+      const talker = message.talker();
       const talkerId = message.talker().id;
       const talkerName = message.talker().name();
-      if ((talkerName || "").includes === "微信") {
+
+      if (talker.type() === wechaty.Contact.Type.Official) {
+        return;
+      }
+
+      if ((talkerName || "").includes("微信")) {
         return;
       }
 
